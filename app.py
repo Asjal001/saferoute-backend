@@ -6,7 +6,7 @@ import joblib
 from tensorflow.keras.models import load_model
 
 app = Flask(__name__)
-CORS(app)  # Allow React to communicate with this server
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # 1. LOAD YOUR MODEL
 print("Loading SafeRoute Brain...")
