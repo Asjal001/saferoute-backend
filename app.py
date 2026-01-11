@@ -14,6 +14,11 @@ model = load_model('SafeRoute_Model.h5')
 preprocessor = joblib.load('preprocessor.pkl')
 print("System Ready!")
 
+@app.route('/', methods=['GET'])
+def home():
+    return "SafeRoute AI Backend is Running!", 200
+
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
